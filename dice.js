@@ -38,11 +38,11 @@ function generateResultTable (totals, totalOutcomes) {
 }
 
 function generateResultBarGraph (totals, totalOutcomes, numberOfRolls) {
-    let graphHTML = " ";
-    for ( let i = 0; i < totalOutcomes; i++)
+    let graphHTML = "";
+    for ( let i = 0; i < totalOutcomes - 1; i++)
     {
         graphHTML += "<div id='bar" + i + "' class ='bar'></div>";
-        graphHTML += "<div id='label" + i + "' class='label'>" + (i + 1) + "</div>";
+        graphHTML += "<div id='label" + i + "' class='label'>" + (i + 2) + "</div>";
     }
     let barGraph = document.getElementById("barGraph");
                 barGraph.innerHTML = graphHTML;
