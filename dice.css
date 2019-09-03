@@ -1,0 +1,13 @@
+.bar {  
+    background-Color: green;
+    height: 500px;
+    width: 50px;
+    position: absolute;
+    bottom: 100px;
+    left: 100px;
+}
+
+.label { 
+    position: absolute;
+    bottom: 80px; 
+}
