@@ -1,4 +1,4 @@
-function init () {
+    function init () {
     let rollButton = document.getElementById("rollButton");
     rollButton.addEventListener("click", roll);
 }
@@ -10,26 +10,28 @@ function roll () {
     {
         totals[i] = 0;
     }   
-
         let numberOfRolls = parseInt (document.getElementById("numberOfRolls").value);
         for (let i = 0; i < numberOfRolls; i++)
         {
-            let dieValue = Math.floor (Math.random() * 11) + 1;
-            totals[dieValue - 1]++;
+            let dice1Value = Math.floor (Math.random() * 6) + 1;
+            let dice2Value = Math.floor (Math.random() * 6) + 1;
+            let resultValue = dice1Value + dice2Value
+            totals[resultValue-2]++;
         }
         generateResultTable (totals, totalOutcomes);
         generateResultBarGraph (totals, totalOutcomes, numberOfRolls);
 }
 
-function generateResultTable (totals, totalOutcomes) {
+function generateResultTable (totals, totalOutcomes) {      
     let tableHTML = "<table>";
     for (let i = 0; i < totalOutcomes - 1; i++)
     {
-        tableHTML += "<tr><td>";
+                    tableHTML += "<tr><td>";
                     tableHTML += i + 2;
                     tableHTML += "</td>";
                     tableHTML += "<td>";
-                    tableHTML += totals[i];
+                    // tableHTML += ": " + count[i]
+                    tableHTML += ": " + totals[i];
                     tableHTML += "</td></tr>";
     }
     tableHTML += "</table>";
@@ -38,7 +40,7 @@ function generateResultTable (totals, totalOutcomes) {
 }
 
 function generateResultBarGraph (totals, totalOutcomes, numberOfRolls) {
-    let graphHTML = "";
+    let graphHTML = " ";
     for ( let i = 0; i < totalOutcomes - 1; i++)
     {
         graphHTML += "<div id='bar" + i + "' class ='bar'></div>";
